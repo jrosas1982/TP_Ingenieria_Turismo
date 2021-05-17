@@ -33,11 +33,11 @@ namespace TurismoNet.Controllers
         //[HttpGet]
         [HttpGet("ciudades")]
         // [Authorize(Roles = "Administrador")]
-        public IEnumerable<Ciudad> Get()
-        //public IEnumerable<CiudadesDTO> Get()
+        //public IEnumerable<Ciudad> Get()
+        public IEnumerable<CiudadesDTO> Get()
         {
-            return context.Ciudades.ToList();
-            //return mapper.Map<List<Ciudad>, List<CiudadesDTO>>(context.Ciudades.ToList());
+            //return context.Ciudades.ToList();
+            return mapper.Map<List<Ciudad>, List<CiudadesDTO>>(context.Ciudades.ToList());
         }
 
         //[HttpGet]
